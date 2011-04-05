@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yammer", "Yammer\Yammer.csproj", "{66BFD3E8-F8DD-40FD-AAB9-48664A963D5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YammerClient", "YammerClient\YammerClient.csproj", "{1A00A2CF-0048-4E80-9435-013AF900AE19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth", "OAuth\OAuth.csproj", "{9DE9B6AC-D096-4FEE-9759-9BCA59C9621D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66BFD3E8-F8DD-40FD-AAB9-48664A963D5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66BFD3E8-F8DD-40FD-AAB9-48664A963D5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66BFD3E8-F8DD-40FD-AAB9-48664A963D5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66BFD3E8-F8DD-40FD-AAB9-48664A963D5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A00A2CF-0048-4E80-9435-013AF900AE19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A00A2CF-0048-4E80-9435-013AF900AE19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A00A2CF-0048-4E80-9435-013AF900AE19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A00A2CF-0048-4E80-9435-013AF900AE19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DE9B6AC-D096-4FEE-9759-9BCA59C9621D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DE9B6AC-D096-4FEE-9759-9BCA59C9621D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DE9B6AC-D096-4FEE-9759-9BCA59C9621D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DE9B6AC-D096-4FEE-9759-9BCA59C9621D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

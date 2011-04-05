@@ -1,0 +1,8 @@
+﻿<Window x:Class="Yammer.Client.AutoView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Concentric Rings" Width="910" Height="512">
+    <Canvas x:Name="MainCanvas" Background="#FFE0E0E0">
+    	<!--<Image Width="199.975" Height="39.995" Source="Images\yammer_logo_trans.png" Stretch="Fill" Canvas.Top="25" Canvas.Left="25"/>-->
+    </Canvas>
+</Window>

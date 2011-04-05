@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="Yammer.Client.MessagePanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="90" Width="373">
+	<UserControl.Resources>
+		<Storyboard x:Key="MessageDeleteButtonOver">
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="DeleteButton" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+				<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.2"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="DeleteButton" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+				<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.2"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="MessageDeleteButtonHide">
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="DeleteButton" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+				<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.2"/>
+				<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="DeleteButton" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+				<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.2"/>
+				<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+
+		<Storyboard x:Key="MessageReplyButtonOver">
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ReplyButton" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+				<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.2"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ReplyButton" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+				<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1.2"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="MessageReplyButtonHide">
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ReplyButton" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+				<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.2"/>
+				<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ReplyButton" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+				<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1.2"/>
+				<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+	<UserControl.Triggers>
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="DeleteButton">
+			<BeginStoryboard Storyboard="{StaticResource MessageDeleteButtonOver}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="DeleteButton">
+			<BeginStoryboard Storyboard="{StaticResource MessageDeleteButtonHide}" />
+		</EventTrigger>
+
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="ReplyButton">
+			<BeginStoryboard Storyboard="{StaticResource MessageReplyButtonOver}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="ReplyButton">
+			<BeginStoryboard Storyboard="{StaticResource MessageReplyButtonHide}" />
+		</EventTrigger>
+	</UserControl.Triggers>
+	<Canvas x:Name="RootCanvas" Opacity="0.8" RenderTransformOrigin="0.5,0.5" Width="Auto">
+		<Canvas.RenderTransform>
+			<TransformGroup>
+				<ScaleTransform ScaleX="1" ScaleY="1"/>
+				<SkewTransform AngleX="0" AngleY="0"/>
+				<RotateTransform Angle="0"/>
+				<TranslateTransform X="0" Y="0"/>
+			</TransformGroup>
+		</Canvas.RenderTransform>
+		<Rectangle Width="354" Height="90" Stroke="{x:Null}" RadiusY="0" RadiusX="0">
+			<Rectangle.Fill>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="#FFEEEEEE" Offset="0.451"/>
+					<GradientStop Color="#FF9F9F9F" Offset="0.996"/>
+					<GradientStop Color="#FEBFBFBF" Offset="0.009"/>
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<Image  Canvas.Left="7" Canvas.Top="9" Height="46" Width="50" x:Name="ImgUser" Source="Images/no_photo.gif" Stretch="Fill"/>
+		<Rectangle Width="280" Height="55" Stroke="{x:Null}" RadiusX="9" RadiusY="9" Canvas.Left="64" Canvas.Top="19" Fill="#FFFFFFFF"/>
+		<TextBlock Width="264" Height="45" Canvas.Left="71" Canvas.Top="24" Text="Message" TextWrapping="Wrap" x:Name="TbMessage" FontFamily="Meiryo" FontSize="9" Foreground="#FF000000"/>
+		<TextBlock Width="249" Height="13" Canvas.Left="67" Canvas.Top="3" Text="UserName" TextWrapping="Wrap" FontSize="10" FontFamily="Meiryo" x:Name="TbUserId" Foreground="#FF000000" FontWeight="Bold"/>
+		<TextBlock TextWrapping="Wrap" Canvas.Top="61" Canvas.Left="7" FontSize="7" Foreground="#FF0F0DEC" Text="21 hours ago" x:Name="TbUpdateTime" />
+		<Button Style="{DynamicResource DeleteButtonStyle}" Width="15" Height="15" Content="" Canvas.Left="329" Canvas.Top="3" x:Name="DeleteButton" ToolTip="Delete Message" RenderTransformOrigin="0.5,0.5">
+			<Button.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform ScaleX="1" ScaleY="1"/>
+					<SkewTransform AngleX="0" AngleY="0"/>
+					<RotateTransform Angle="0"/>
+					<TranslateTransform X="0" Y="0"/>
+				</TransformGroup>
+			</Button.RenderTransform>
+		</Button>
+		<Button Style="{DynamicResource ReplyButtonStyle}" Width="15" Height="15" Content="" Canvas.Left="308" Canvas.Top="2" x:Name="ReplyButton" ToolTip="Reply this message" RenderTransformOrigin="0.5,0.5">
+			<Button.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform ScaleX="1" ScaleY="1"/>
+					<SkewTransform AngleX="0" AngleY="0"/>
+					<RotateTransform Angle="0"/>
+					<TranslateTransform X="0" Y="0"/>
+				</TransformGroup>
+			</Button.RenderTransform>
+		</Button>		
+		<TextBlock Width="76" Height="15" TextWrapping="Wrap" Canvas.Left="265" Canvas.Top="75" Text="Reply to" FontSize="8" FontWeight="Bold" HorizontalAlignment="Stretch" TextAlignment="Right" Foreground="#B20000FF" x:Name="TbReplyTo" Visibility="Collapsed"/>
+
+  </Canvas>
+</UserControl>

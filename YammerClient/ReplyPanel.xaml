@@ -1,0 +1,15 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="Yammer.Client.ReplyPanel"
+	x:Name="UserControl"
+	d:DesignWidth="640" d:DesignHeight="480" Width="200" Height="218">
+	<Canvas Background="#FFCDCCE7">
+		<TextBox Text="" TextWrapping="Wrap" Height="145.277" Width="184" Canvas.Top="25.723" Canvas.Left="8" x:Name="ReplyText"/>
+		<Button Content="Cancel" Canvas.Top="175" Canvas.Left="113" x:Name="CancelButton"/>
+		<Button Content="Reply" Canvas.Top="175" Canvas.Left="38" x:Name="ReplyButton"/>
+	</Canvas>
+</UserControl>
